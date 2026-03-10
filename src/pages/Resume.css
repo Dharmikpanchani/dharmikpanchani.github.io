@@ -131,6 +131,11 @@
   color: var(--text-secondary);
 }
 
+.info-row > span:last-child {
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
 .info-label {
   color: var(--text-muted);
   font-weight: 600;

@@ -206,7 +206,7 @@ function Resume() {
                 </div>
                 <div className="info-row">
                   <span className="info-label">Email</span>
-                  <span>dharmikpanchani96@gmail.com</span>
+                  <span>dharmikpanchani96@<wbr />gmail.com</span>
                 </div>
                 <div className="info-row">
                   <span className="info-label">Phone</span>
