@@ -68,14 +68,16 @@
   font-weight: 500;
 }
 
-a.detail-value.detail-link {
+a.detail-value.detail-link,
+button.detail-value.detail-link {
   text-decoration: none;
   cursor: pointer;
   color: var(--accent-primary);
   transition: opacity 0.2s ease;
 }
 
-a.detail-value.detail-link:hover {
+a.detail-value.detail-link:hover,
+button.detail-value.detail-link:hover {
   text-decoration: underline;
   opacity: 0.8;
 }
@@ -261,6 +263,143 @@ a.detail-value.detail-link:hover {
   border-color: var(--accent-primary);
   color: var(--accent-primary);
   background: rgba(108, 99, 255, 0.08);
+}
+
+/* Email picker trigger button */
+button.detail-value.detail-link.email-picker-trigger {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-main);
+  cursor: pointer;
+  text-align: left;
+}
+
+/* Email Picker Modal */
+.email-picker-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to   { opacity: 1 }
+}
+
+.email-picker-modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(16px); opacity: 0 }
+  to   { transform: translateY(0);    opacity: 1 }
+}
+
+.email-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.email-picker-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.email-picker-close {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.email-picker-close:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.email-picker-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.email-picker-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.email-picker-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: background 0.18s, border-color 0.18s, transform 0.15s;
+  cursor: pointer;
+}
+
+.email-picker-item:hover {
+  background: var(--client-bg);
+  border-color: var(--client-color);
+  transform: translateX(3px);
+}
+
+.email-picker-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.email-picker-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  flex: 1;
+}
+
+.email-picker-arrow {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: color 0.18s;
+}
+
+.email-picker-item:hover .email-picker-arrow {
+  color: var(--client-color);
 }
 
 @media (max-width: 900px) {

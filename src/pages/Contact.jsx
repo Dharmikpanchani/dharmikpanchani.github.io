@@ -1,8 +1,117 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { submitContact, resetContact } from '../store/slices/contactSlice'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import './Contact.css'
+
+const EMAIL = 'dharmikpanchani96@gmail.com'
+
+const EMAIL_CLIENTS = [
+  {
+    name: 'Gmail',
+    url: `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}`,
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <path d="M2 6.5C2 5.4 2.9 4.5 4 4.5h16c1.1 0 2 .9 2 2v11c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-11z" fill="var(--bg-secondary)" stroke="var(--border-color)" strokeWidth="0.5"/>
+        <path d="M2 6.5l10 7 10-7" stroke="#EA4335" strokeWidth="1.5" fill="none"/>
+        <path d="M2 6.5l10 7" stroke="#34A853" strokeWidth="1.5" fill="none"/>
+        <path d="M12 13.5l10-7" stroke="#FBBC05" strokeWidth="1.5" fill="none"/>
+        <path d="M2 19.5V6.5l10 7 10-7v13" fill="#4285F4" opacity="0.07"/>
+        <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" fontSize="9" fontWeight="700" fill="#EA4335" fontFamily="Arial">G</text>
+      </svg>
+    ),
+    color: '#EA4335',
+    bg: 'rgba(234,67,53,0.08)',
+  },
+  {
+    name: 'Outlook',
+    url: `https://outlook.live.com/mail/0/deeplink/compose?to=${EMAIL}`,
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <rect width="24" height="24" rx="4" fill="#0078D4" opacity="0.12"/>
+        <text x="50%" y="56%" dominantBaseline="middle" textAnchor="middle" fontSize="10" fontWeight="700" fill="#0078D4" fontFamily="Arial">O</text>
+      </svg>
+    ),
+    color: '#0078D4',
+    bg: 'rgba(0,120,212,0.08)',
+  },
+  {
+    name: 'Yahoo Mail',
+    url: `https://compose.mail.yahoo.com/?to=${EMAIL}`,
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <rect width="24" height="24" rx="4" fill="#6001D2" opacity="0.12"/>
+        <text x="50%" y="56%" dominantBaseline="middle" textAnchor="middle" fontSize="10" fontWeight="700" fill="#6001D2" fontFamily="Arial">Y!</text>
+      </svg>
+    ),
+    color: '#6001D2',
+    bg: 'rgba(96,1,210,0.08)',
+  },
+  // {
+  //   name: 'Default Mail App',
+  //   url: `mailto:${EMAIL}`,
+  //   icon: (
+  //     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  //       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+  //       <polyline points="22,6 12,13 2,6"/>
+  //     </svg>
+  //   ),
+  //   color: 'var(--accent-primary)',
+  //   bg: 'rgba(108,99,255,0.08)',
+  // },
+]
+
+function EmailPickerModal({ onClose }) {
+  const modalRef = useRef(null)
+
+  useEffect(() => {
+    const handleKey = (e) => { if (e.key === 'Escape') onClose() }
+    document.addEventListener('keydown', handleKey)
+    return () => document.removeEventListener('keydown', handleKey)
+  }, [onClose])
+
+  const handleBackdrop = (e) => {
+    if (e.target === e.currentTarget) onClose()
+  }
+
+  return (
+    <div className="email-picker-backdrop" onClick={handleBackdrop}>
+      <div className="email-picker-modal" ref={modalRef}>
+        <div className="email-picker-header">
+          <h3 className="email-picker-title">Open with</h3>
+          <button className="email-picker-close" onClick={onClose} aria-label="Close">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+        <p className="email-picker-subtitle">Choose your email client to send a message</p>
+        <div className="email-picker-list">
+          {EMAIL_CLIENTS.map((client) => (
+            <a
+              key={client.name}
+              href={client.url}
+              target={client.name === 'Default Mail App' ? '_self' : '_blank'}
+              rel="noopener noreferrer"
+              className="email-picker-item"
+              style={{ '--client-color': client.color, '--client-bg': client.bg }}
+              onClick={onClose}
+            >
+              <span className="email-picker-icon" style={{ color: client.color, background: client.bg }}>
+                {client.icon}
+              </span>
+              <span className="email-picker-name">{client.name}</span>
+              <svg className="email-picker-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
 
 const initialForm = {
   name: '',
@@ -60,6 +169,7 @@ function Contact() {
 
   const [form, setForm] = useState(initialForm)
   const [errors, setErrors] = useState({})
+  const [showEmailPicker, setShowEmailPicker] = useState(false)
 
   const infoRef = useScrollReveal()
   const formRef = useScrollReveal({ threshold: 0.08 })
@@ -170,14 +280,13 @@ function Contact() {
                     <div>
                       <p className="detail-label">{label}</p>
                       {href ? (
-                        <a
-                          // href={href}
-                          href={`https://mail.google.com/mail/?view=cm&fs=1&to=${href}`}
-                          className={`detail-value detail-link ${valueClass || ''}`}
-                          target="_blank"
+                        <button
+                          type="button"
+                          className={`detail-value detail-link email-picker-trigger ${valueClass || ''}`}
+                          onClick={() => setShowEmailPicker(true)}
                         >
                           {value}
-                        </a>
+                        </button>
                       ) : (
                         <p className={`detail-value ${valueClass || ''}`}>{value}</p>
                       )}
@@ -323,6 +432,8 @@ function Contact() {
           </div>
         </div>
       </div>
+
+      {showEmailPicker && <EmailPickerModal onClose={() => setShowEmailPicker(false)} />}
     </div>
   )
 }
