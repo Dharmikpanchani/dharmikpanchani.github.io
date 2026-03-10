@@ -14,8 +14,7 @@ function App() {
       <Header />
       <main className="main-content">
         <Routes>
-          <Route path="/" element={<Navigate to="/about" replace />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={<About />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/contact" element={<Contact />} />

@@ -4,7 +4,7 @@ import { useTheme } from '../context/ThemeContext'
 import './Header.css'
 
 const navLinks = [
-  { path: '/about', label: 'About Me' },
+  { path: '/', label: 'About Me' },
   { path: '/resume', label: 'Resume' },
   { path: '/profile', label: 'Profile' },
   { path: '/contact', label: 'Contact Me' },
