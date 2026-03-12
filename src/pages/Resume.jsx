@@ -58,6 +58,8 @@ const experience = [
       {
         name: 'NewsCapital (OTT Platform)',
         url: 'https://newscapital.com/',
+        role: 'MERN Stack Developer',
+        technologies: ['Next.js', 'Node.js', 'Vite', 'JavaScript'],
         description: 'NewsCapital is a digital OTT platform designed to deliver news content through a modern and responsive web interface.',
         contributions: [
           'Developed frontend UI using React.js',
@@ -69,6 +71,8 @@ const experience = [
       {
         name: 'AXI Digital',
         url: 'https://dev.axidigital.xyz/',
+        role: 'React Developer',
+        technologies: ['React', 'TypeScript', 'Keycloak Auth', 'Blockchain', 'Java APIs'],
         description: 'AXI Digital is a digital platform designed to provide modern digital services and solutions.',
         contributions: [
           'Developed frontend modules using React.js',
@@ -96,6 +100,8 @@ const experience = [
       {
         name: 'Real Estate Platform',
         url: 'https://vh25wmf071132.user.appworkdemo.com/',
+        role: 'Frontend Developer',
+        technologies: ['React', 'Node.js', 'Vite', 'TypeScript'],
         description: 'A real estate platform designed to manage property listings and provide users with a responsive interface for browsing property information.',
         contributions: [
           'Developed frontend UI using HTML, CSS, and Bootstrap',
@@ -110,6 +116,7 @@ const experience = [
 
 const internshipProject = {
   name: 'School Management System (Database Project)',
+  technologies: ['Database Design'],
   description: 'During my internship, I worked on designing and developing a database structure for a School Management System to efficiently manage school-related operations. Designed and developed a structured and normalized relational database system to manage school data such as students, teachers, classes, and administrative records.',
   contributions: [
     'Designed normalized relational database schema for school operations',
@@ -188,7 +195,7 @@ function Resume() {
                 About
               </h2>
               <p className="resume-about-text">
-                React.js Developer with 3+ years of experience building scalable web applications.
+                MERN Stack Developer with 3+ years of experience building scalable web applications.
                 Passionate about clean code, great user experiences, and modern front-end development.
               </p>
               <div className="info-rows">
@@ -366,7 +373,17 @@ function Resume() {
                                   Visit
                                 </a>
                               </div>
+                              {proj.role && (
+                                <span className="project-role-badge">{proj.role}</span>
+                              )}
                               <p className="exp-project-desc">{proj.description}</p>
+                              {proj.technologies && proj.technologies.length > 0 && (
+                                <div className="exp-project-tech">
+                                  {proj.technologies.map((tech) => (
+                                    <span key={tech} className="resume-skill-tag resume-skill-tag--tech">{tech}</span>
+                                  ))}
+                                </div>
+                              )}
                               <ul className="timeline-points">
                                 {proj.contributions.map((c, m) => (
                                   <li key={m}>{c}</li>
@@ -395,7 +412,17 @@ function Resume() {
               </h2>
               <div className="exp-project-card exp-project-card--standalone">
                 <span className="exp-project-name">{internshipProject.name}</span>
+                {internshipProject.role && (
+                  <span className="project-role-badge">{internshipProject.role}</span>
+                )}
                 <p className="exp-project-desc" style={{ marginTop: '8px' }}>{internshipProject.description}</p>
+                {internshipProject.technologies && internshipProject.technologies.length > 0 && (
+                  <div className="exp-project-tech">
+                    {internshipProject.technologies.map((tech) => (
+                      <span key={tech} className="resume-skill-tag resume-skill-tag--tech">{tech}</span>
+                    ))}
+                  </div>
+                )}
                 <p className="timeline-sub-label" style={{ marginTop: '10px' }}>Key Contributions</p>
                 <ul className="timeline-points">
                   {internshipProject.contributions.map((c, i) => (
