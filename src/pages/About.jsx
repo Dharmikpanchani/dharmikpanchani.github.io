@@ -112,7 +112,7 @@ function About() {
               <h1 className="hero-name gradient-text">Dharmik Panchani</h1>
               <p className="hero-title">MERN Stack Developer</p>
               <p className="hero-description">
-                I am a passionate MERN stack Developer with over 3+ years of experience building scalable, responsive, and high-performance web applications. I specialize in modern front-end development using React, JavaScript, Redux, Node, MongoDB and UI frameworks.
+                I'm a passionate MERN stack Developer with over 3+ years of experience building scalable, responsive, and high-performance web applications. I specialize in modern front-end development using React, JavaScript, Redux, Node, MongoDB and UI frameworks.
               </p>
               <p className="hero-description">
                 I focus on creating user-friendly interfaces, clean code architecture, and high-quality digital experiences.

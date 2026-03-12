@@ -45,7 +45,7 @@ const experience = [
     company: 'Virtual Height',
     url: 'https://www.virtualheight.com/',
     period: 'Aug 2023 – Present',
-    description: 'I am currently working as a React Developer at Virtual Height, where I develop modern and scalable web applications. My role focuses on building responsive user interfaces, creating reusable components, and maintaining high-performance frontend applications using modern technologies.',
+    description: 'I\'m currently working as a React Developer at Virtual Height, where I develop modern and scalable web applications. My role focuses on building responsive user interfaces, creating reusable components, and maintaining high-performance frontend applications using modern technologies.',
     points: [
       'Develop modern web applications using React.js',
       'Build reusable and scalable UI components',
