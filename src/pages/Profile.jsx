@@ -1,32 +1,7 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import './Profile.css'
 import myImg from '../assets/images/jpg/dharmik.jpg'
-
-const techStack = [
-  { name: 'React.js', symbol: 'Re' },
-  { name: 'Next.js', symbol: 'Nx' },
-  { name: 'TypeScript', symbol: 'TS' },
-  { name: 'JavaScript', symbol: 'JS' },
-  { name: 'Node.js', symbol: 'No' },
-  { name: 'MongoDB', symbol: 'Mg' },
-  { name: 'Redux', symbol: 'Rx' },
-  { name: 'Material UI', symbol: 'MU' },
-  { name: 'HTML5', symbol: 'Ht' },
-  { name: 'CSS3', symbol: 'Cs' },
-  { name: 'Vite', symbol: 'Vi' },
-  { name: 'Formik', symbol: 'Fk' },
-]
-
-const skillBars = [
-  { name: 'JavaScript', level: 92 },
-  { name: 'React.js', level: 90 },
-  { name: 'Material UI', level: 88 },
-  { name: 'TypeScript', level: 85 },
-  { name: 'Redux', level: 90 },
-  { name: 'Next.js', level: 60 },
-  { name: 'Node.js', level: 75 },
-  { name: 'MongoDB', level: 70 },
-]
+import { skillBars, techItems } from '../common/StaticData'
 
 function Profile() {
   const profileCardRef = useScrollReveal()
@@ -47,7 +22,7 @@ function Profile() {
                 className="profile-avatar-img"
               />
               <h2 className="profile-name gradient-text">Dharmik Panchani</h2>
-              <p className="profile-title">React.js Developer</p>
+              <p className="profile-title">MERN Stack Developer</p>
               <div className="profile-exp-badge">~3+ Years Experience</div>
               <div className="profile-divider" />
               <div className="profile-links">
@@ -129,9 +104,15 @@ function Profile() {
                 Technology Stack
               </h2>
               <div className="tech-grid">
-                {techStack.map((tech) => (
-                  <div key={tech.name} className="tech-badge">
-                    <span className="tech-symbol">{tech.symbol}</span>
+                {techItems.map((tech) => (
+                  <div key={tech.name} className="tech-badge" onClick={() => window.open(tech.doc, "_blank")}>
+                    {
+                      tech?.logo ? (
+                        <img src={tech.logo} alt={tech.name} className="tech-icon" />
+                      ) : (
+                        <span className="tech-symbol">{tech.symbol}</span>
+                      )
+                    }
                     <span className="tech-name">{tech.name}</span>
                   </div>
                 ))}

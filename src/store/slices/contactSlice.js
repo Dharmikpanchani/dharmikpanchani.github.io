@@ -17,7 +17,6 @@ export const submitContact = createAsyncThunk(
         message: formData.message,
       }
 
-      console.log(templateParams, "dharmik")
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,

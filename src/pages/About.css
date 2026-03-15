@@ -7,20 +7,16 @@
    ================================================ */
 .hero-section {
   padding: 80px 0 64px;
-  background: linear-gradient(
-    135deg,
-    rgba(108, 99, 255, 0.07) 0%,
-    rgba(0, 212, 255, 0.03) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(108, 99, 255, 0.07) 0%,
+      rgba(0, 212, 255, 0.03) 100%);
   border-bottom: 1px solid var(--border-color);
 }
 
 [data-theme="light"] .hero-section {
-  background: linear-gradient(
-    135deg,
-    rgba(91, 82, 232, 0.06) 0%,
-    rgba(2, 132, 199, 0.03) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(91, 82, 232, 0.06) 0%,
+      rgba(2, 132, 199, 0.03) 100%);
 }
 
 .hero-content {
@@ -154,6 +150,11 @@
   overflow: hidden;
 }
 
+.slide-logo {
+  width: 22px;
+  height: 22px;
+}
+
 [data-theme="light"] .tech-section {
   background: var(--bg-secondary);
 }
@@ -165,20 +166,16 @@
   overflow: hidden;
   padding: 8px 0;
   /* Fade edges */
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 8%,
-    black 92%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 8%,
-    black 92%,
-    transparent 100%
-  );
+  -webkit-mask-image: linear-gradient(to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%);
+  mask-image: linear-gradient(to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%);
 }
 
 .marquee-outer:hover .marquee-track {
@@ -205,6 +202,7 @@
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
   cursor: default;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
 .tech-slide-card:hover {
