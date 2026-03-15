@@ -1,47 +1,5 @@
 export const techItems = [
     {
-        name: "React",
-        symbol: "Re",
-        color: "#61DAFB",
-        logo: "https://cdn.simpleicons.org/react/61DAFB",
-        doc: "https://react.dev"
-    },
-    {
-        name: "Node.js",
-        symbol: "No",
-        color: "#68A063",
-        logo: "https://cdn.simpleicons.org/nodedotjs/68A063",
-        doc: "https://nodejs.org/en/docs"
-    },
-    {
-        name: "JavaScript",
-        symbol: "JS",
-        color: "#F7DF1E",
-        logo: "https://cdn.simpleicons.org/javascript/F7DF1E",
-        doc: "https://javascript.info/"
-    },
-    {
-        name: "TypeScript",
-        symbol: "TS",
-        color: "#3178C6",
-        logo: "https://cdn.simpleicons.org/typescript/3178C6",
-        doc: "https://www.typescriptlang.org/docs"
-    },
-    {
-        name: "MongoDB",
-        symbol: "Mg",
-        color: "#4DB33D",
-        logo: "https://cdn.simpleicons.org/mongodb/4DB33D",
-        doc: "https://www.mongodb.com/docs"
-    },
-    {
-        name: "Redux",
-        symbol: "Rx",
-        color: "#9c6dff",
-        logo: "https://cdn.simpleicons.org/redux/9c6dff",
-        doc: "https://redux.js.org"
-    },
-    {
         name: "HTML",
         symbol: "Ht",
         color: "#E34F26",
@@ -55,6 +13,13 @@ export const techItems = [
         doc: "https://developer.mozilla.org/en-US/docs/Web/CSS"
     },
     {
+        name: "Bootstrap",
+        symbol: "Bs",
+        color: "#563d7c",
+        logo: "https://cdn.simpleicons.org/bootstrap/563d7c",
+        doc: "https://getbootstrap.com/docs"
+    },
+    {
         name: "Material UI",
         symbol: "MU",
         color: "#007FFF",
@@ -62,18 +27,25 @@ export const techItems = [
         doc: "https://mui.com/material-ui/getting-started/overview"
     },
     {
-        name: "Next.js",
-        symbol: "Nx",
-        color: "#000000",
-        logo: "https://cdn.simpleicons.org/nextdotjs/000000",
-        doc: "https://nextjs.org/docs"
+        name: "JavaScript",
+        symbol: "JS",
+        color: "#F7DF1E",
+        logo: "https://cdn.simpleicons.org/javascript/F7DF1E",
+        doc: "https://javascript.info/"
     },
     {
-        name: "Vite",
-        symbol: "Vi",
-        color: "#a78bfa",
-        logo: "https://cdn.simpleicons.org/vite/a78bfa",
-        doc: "https://vitejs.dev/guide"
+        name: "React",
+        symbol: "Re",
+        color: "#61DAFB",
+        logo: "https://cdn.simpleicons.org/react/61DAFB",
+        doc: "https://react.dev"
+    },
+    {
+        name: "Redux",
+        symbol: "Rx",
+        color: "#9c6dff",
+        logo: "https://cdn.simpleicons.org/redux/9c6dff",
+        doc: "https://redux.js.org"
     },
     {
         name: "Formik",
@@ -83,11 +55,53 @@ export const techItems = [
         doc: "https://formik.org/docs/overview"
     },
     {
-        name: "Bootstrap",
-        symbol: "Bs",
-        color: "#563d7c",
-        logo: "https://cdn.simpleicons.org/bootstrap/563d7c",
-        doc: "https://getbootstrap.com/docs"
+        name: "Vite",
+        symbol: "Vi",
+        color: "#a78bfa",
+        logo: "https://cdn.simpleicons.org/vite/a78bfa",
+        doc: "https://vitejs.dev/guide"
+    },
+    {
+        name: "Next.js",
+        symbol: "Nx",
+        color: "#000000",
+        logo: "https://cdn.simpleicons.org/nextdotjs/000000",
+        doc: "https://nextjs.org/docs"
+    },
+    {
+        name: "Node.js",
+        symbol: "No",
+        color: "#68A063",
+        logo: "https://cdn.simpleicons.org/nodedotjs/68A063",
+        doc: "https://nodejs.org/en/docs"
+    },
+    {
+        name: "JWT",
+        symbol: "Jw",
+        color: "#E34F26",
+        logo: "https://cdn.simpleicons.org/jsonwebtokens/E34F26",
+        doc: "https://jwt.io/introduction"
+    },
+    {
+        name: "Express.js",
+        symbol: "Ex",
+        color: "#000000",
+        logo: "https://cdn.simpleicons.org/express/000000",
+        doc: "https://expressjs.com/en/starter/installing.html"
+    },
+    {
+        name: "MongoDB",
+        symbol: "Mg",
+        color: "#4DB33D",
+        logo: "https://cdn.simpleicons.org/mongodb/4DB33D",
+        doc: "https://www.mongodb.com/docs"
+    },
+    {
+        name: "TypeScript",
+        symbol: "TS",
+        color: "#3178C6",
+        logo: "https://cdn.simpleicons.org/typescript/3178C6",
+        doc: "https://www.typescriptlang.org/docs"
     },
     {
         name: "Firebase",
@@ -104,19 +118,13 @@ export const techItems = [
         doc: "https://www.keycloak.org/documentation"
     },
     {
-        name: "JWT",
-        symbol: "Jw",
-        color: "#E34F26",
-        logo: "https://cdn.simpleicons.org/jsonwebtokens/E34F26",
-        doc: "https://jwt.io/introduction"
-    },
-    {
-        name: "Express.js",
-        symbol: "Ex",
-        color: "#000000",
-        logo: "https://cdn.simpleicons.org/express/000000",
-        doc: "https://expressjs.com/en/starter/installing.html"
+        name: "Git",
+        symbol: "Gi",
+        color: "#F05032",
+        logo: "https://cdn.simpleicons.org/git/F05032",
+        doc: "https://git-scm.com/doc"
     }
+
 ];
 
 export const projects = [
