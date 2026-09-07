@@ -64,10 +64,10 @@ function Profile() {
                 Profile Summary
               </h2>
               <p className="summary-text">
-                I'm a passionate and results-driven MERN Stack Developer with 3+ years of experience building scalable, responsive, and high-performance web applications. I specialize in developing modern web applications using JavaScript, React.js, Node.js, MongoDB, and UI frameworks such as Material UI.
+                I'm a passionate and results-driven MERN Stack Developer with 3+ years of experience building scalable, responsive, and high-performance web applications. I specialize in modern full-stack development using React.js, Next.js, Node.js, Express.js, MongoDB, and TypeScript, backed by robust state management (Redux Toolkit) and enterprise authentication (Keycloak & JWT).
               </p>
               <p className="summary-text">
-                I focus on creating user-friendly interfaces, maintaining clean and scalable code architecture, and delivering high-quality digital experiences.
+                I focus on architecting maintainable codebases, creating intuitive user experiences, designing efficient database schemas, and delivering high-impact digital products.
               </p>
             </div>
 

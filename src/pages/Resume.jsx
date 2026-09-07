@@ -3,15 +3,15 @@ import './Resume.css'
 import resumePDF from '../assets/pdf/dharmik-panchani-resume.pdf'
 
 const skillCategories = {
-  Frontend: ['React.js', 'Next.js', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Redux'],
-  'UI Libraries': ['Material UI (MUI)', 'Formik', 'Vite', 'Bootstrap'],
-  Backend: ['Node.js', 'MongoDB'],
-  'Tools & Others': ['Git', 'Keycloak', 'REST APIs', 'Blockchain UI'],
+  Frontend: ['React.js', 'Next.js', 'TypeScript', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Redux Toolkit', 'Context API'],
+  'Backend & APIs': ['Node.js', 'Express.js', 'MongoDB', 'RESTful APIs', 'JWT Auth', 'Firebase'],
+  'UI & Styling': ['Material UI (MUI)', 'Tailwind CSS', 'Bootstrap', 'Responsive Web Design'],
+  'Tools & Architecture': ['Git & GitHub', 'Vite', 'Postman', 'Keycloak (OAuth2/OIDC)', 'Formik / Yup'],
 }
 
-const softSkills = ['Problem Solving', 'Leadership', 'Management']
+const softSkills = ['Problem Solving', 'Leadership', 'Team Collaboration', 'Time Management']
 
-const interests = ['Sports', 'Traveling', 'Reading']
+const interests = ['Tech Blogging', 'Open Source', 'Traveling', 'Sports']
 
 const languages = [
   { name: 'English', level: 'Professional' },
@@ -37,77 +37,77 @@ const education = [
   },
 ]
 
-const operatingSystems = ['Windows', 'Ubuntu']
+const operatingSystems = ['Windows', 'Ubuntu / Linux']
 
 const experience = [
   {
-    role: 'React Developer',
+    role: 'MERN Stack / React Developer',
     company: 'Virtual Height',
     url: 'https://www.virtualheight.com/',
     period: 'Aug 2023 – Present',
-    description: 'I\'m currently working as a React Developer at Virtual Height, where I develop modern and scalable web applications. My role focuses on building responsive user interfaces, creating reusable components, and maintaining high-performance frontend applications using modern technologies.',
+    description: 'Working as a MERN Stack Developer at Virtual Height, architecting and building modern, scalable web applications. Specializing in high-performance frontend interfaces with React & Next.js, API integration with Node.js/Express, and robust state management.',
     points: [
-      'Develop modern web applications using React.js',
-      'Build reusable and scalable UI components',
-      'Implement responsive user interfaces',
-      'Manage application state using Redux',
-      'Optimize application performance and code quality',
-      'Collaborate with designers and backend developers to deliver high-quality solutions',
+      'Architect and maintain scalable frontend architectures using React.js, Next.js, and TypeScript',
+      'Implement global state management and client-side caching utilizing Redux Toolkit',
+      'Integrate RESTful microservices, WebSocket/polling feeds, and third-party APIs',
+      'Enforce authentication & authorization workflows with Keycloak (OAuth2 / OIDC) and JWT',
+      'Optimize application performance, Core Web Vitals, and responsive UI across devices',
+      'Collaborate in Agile teams with UI/UX designers and backend developers for rapid feature delivery',
     ],
     projects: [
       {
-        name: 'NewsCapital (OTT Platform)',
+        name: 'NewsCapital (Digital OTT & News Platform)',
         url: 'https://newscapital.com/',
         role: 'MERN Stack Developer',
-        technologies: ['Next.js', 'Node.js', 'Vite', 'JavaScript'],
-        description: 'NewsCapital is a digital OTT platform designed to deliver news content through a modern and responsive web interface.',
+        technologies: ['Next.js', 'React.js', 'Node.js', 'Express.js', 'MongoDB', 'Firebase', 'Redux Toolkit'],
+        description: 'NewsCapital is a high-traffic digital OTT & news streaming platform providing real-time news, personalized recommendations, and editorial workflows.',
         contributions: [
-          'Developed frontend UI using React.js',
-          'Implemented responsive layouts and reusable components',
-          'Integrated APIs to display dynamic news content',
-          'Improved overall user experience and application performance',
+          'Developed responsive frontend UI and SSR pages using Next.js for high SEO ranking and fast load speeds',
+          'Integrated Firebase Cloud Messaging for real-time breaking news notifications and live updates',
+          'Implemented centralized state management using Redux Toolkit for seamless multi-category navigation',
+          'Optimized asset loading and caching strategies, reducing page load latency by over 35%',
         ],
       },
       {
-        name: 'AXI Digital',
+        name: 'AXI Digital (Decentralized & Enterprise Platform)',
         url: 'https://dev.axidigital.xyz/',
-        role: 'React Developer',
-        technologies: ['React', 'TypeScript', 'Keycloak Auth', 'Blockchain', 'Java APIs'],
-        description: 'AXI Digital is a digital platform designed to provide modern digital services and solutions.',
+        role: 'Frontend & UI Integration Developer',
+        technologies: ['React.js', 'TypeScript', 'Keycloak (OAuth2/OIDC)', 'Redux Toolkit', 'Material UI', 'Java APIs'],
+        description: 'AXI Digital is an enterprise digital services platform delivering secure decentralized asset management and analytical dashboards.',
         contributions: [
-          'Developed frontend modules using React.js',
-          'Built dynamic and reusable UI components',
-          'Improved application responsiveness and performance',
-          'Worked on UI improvements and feature implementation',
+          'Engineered enterprise-grade UI modules using React 18, TypeScript, and Material UI',
+          'Implemented secure SSO authentication and Role-Based Access Control (RBAC) via Keycloak',
+          'Built interactive data visualization dashboards for real-time transaction and metrics monitoring',
+          'Configured resilient API integration with Axios interceptors for automated token refreshing and error handling',
         ],
       },
     ],
   },
   {
-    role: 'Frontend Developer',
+    role: 'Frontend / Web Developer',
     company: 'AIMS Infosoft',
     url: 'https://www.aimsinfosoft.com/',
     period: 'July 2022 – July 2023',
-    description: 'I worked as a Frontend Developer at AIMS Infosoft, where I developed responsive web applications and user interfaces using modern frontend technologies.',
+    description: 'Developed responsive web applications, user interfaces, and modular components utilizing modern frontend technologies and clean coding practices.',
     points: [
-      'Developed responsive web pages using HTML, CSS, and Bootstrap',
-      'Built dynamic user interfaces using React.js',
-      'Implemented state management using Redux',
-      'Collaborated with team members to deliver high-quality web applications',
-      'Maintained clean, structured, and maintainable code',
+      'Developed responsive, pixel-perfect web pages using React.js, HTML5, CSS3, and Bootstrap',
+      'Built reusable dynamic UI components and handled complex client-side form validations',
+      'Integrated RESTful APIs and managed application state using Redux',
+      'Participated in code reviews, bug fixing, and continuous performance improvements',
+      'Maintained clean, modular, and well-documented codebase adhering to frontend standards',
     ],
     projects: [
       {
         name: 'Real Estate Platform',
         url: 'https://vh25wmf071132.user.appworkdemo.com/',
-        role: 'Frontend Developer',
-        technologies: ['React', 'Node.js', 'Vite', 'TypeScript'],
-        description: 'A real estate platform designed to manage property listings and provide users with a responsive interface for browsing property information.',
+        role: 'Full Stack MERN Developer',
+        technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'TypeScript', 'JWT'],
+        description: 'A comprehensive property listing and management platform featuring dynamic search, multi-attribute filtering, and map discovery.',
         contributions: [
-          'Developed frontend UI using HTML, CSS, and Bootstrap',
-          'Implemented interactive components using React.js',
-          'Built responsive layouts for better user experience',
-          'Improved user interface structure and usability',
+          'Built responsive property listing layouts and interactive search filters using React & TypeScript',
+          'Implemented secure authentication with JWT and protected administrative route guards',
+          'Integrated Google Maps API for interactive location-based property discovery',
+          'Collaborated on designing MongoDB schemas for optimized listing query performance',
         ],
       },
     ],
@@ -115,14 +115,14 @@ const experience = [
 ]
 
 const internshipProject = {
-  name: 'School Management System (Database Project)',
-  technologies: ['Database Design'],
-  description: 'During my internship, I worked on designing and developing a database structure for a School Management System to efficiently manage school-related operations. Designed and developed a structured and normalized relational database system to manage school data such as students, teachers, classes, and administrative records.',
+  name: 'School Management System (Database & Backend Project)',
+  technologies: ['Node.js', 'MongoDB', 'Relational Database Design', 'REST APIs'],
+  description: 'Designed and implemented a structured and normalized database architecture for a School Management System to efficiently handle student enrollment, academic records, faculty allocation, and administrative workflows.',
   contributions: [
-    'Designed normalized relational database schema for school operations',
-    'Structured data management for students, teachers, and classes',
-    'Implemented efficient table relationships and data integrity constraints',
-    'Developed organized database system for administrative records',
+    'Designed normalized database schemas ensuring high data integrity and minimal redundancy',
+    'Structured relational models for students, instructors, courses, and examination grading',
+    'Implemented table relationships, primary/foreign indexing, and data constraint rules',
+    'Documented comprehensive Entity-Relationship (ER) diagrams and SQL/NoSQL schema specifications',
   ],
 }
 
@@ -205,7 +205,7 @@ function Resume() {
                 </div>
                 <div className="info-row">
                   <span className="info-label">Role</span>
-                  <span>React.js Developer</span>
+                  <span>MERN Stack Developer</span>
                 </div>
                 <div className="info-row">
                   <span className="info-label">Experience</span>
