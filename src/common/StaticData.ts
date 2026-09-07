@@ -202,7 +202,7 @@ export const projects = [
     },
     {
         name: 'School Management & Administration System',
-        url: null,
+        url: 'http://vidyasetudemo.in/',
         role: 'Database & Backend Developer',
         technologies: ['Node.js', 'MongoDB', 'Express.js', 'Relational Database Design', 'REST APIs'],
         points: [
