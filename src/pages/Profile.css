@@ -4,8 +4,8 @@
 
 .profile-layout {
   display: grid;
-  grid-template-columns: 270px 1fr;
-  gap: 24px;
+  grid-template-columns: 290px 1fr;
+  gap: 28px;
   align-items: start;
 }
 
@@ -14,17 +14,24 @@
   text-align: center;
   position: sticky;
   top: 90px;
+  border-radius: var(--radius);
+  padding: 30px 24px;
 }
 
 .profile-avatar-img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  border-radius: 24px;
   object-fit: cover;
-  /* border: 1px solid var(--accent-primary); */
-  /* box-shadow: 0 0 0 1px rgba(108, 99, 255, 0.15), 0 8px 32px rgba(108, 99, 255, 0.4); */
-  margin: 0 auto 16px;
+  margin: 0 auto 18px;
   display: block;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.profile-avatar-img:hover {
+  transform: scale(1.04);
 }
 
 .profile-name {
@@ -35,32 +42,33 @@
 
 .profile-title {
   color: var(--text-secondary);
-  font-size: 0.875rem;
-  margin-bottom: 10px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-bottom: 12px;
 }
 
 .profile-exp-badge {
   display: inline-block;
-  padding: 4px 14px;
+  padding: 5px 14px;
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: 0.76rem;
   font-weight: 600;
   font-family: var(--font-mono);
-  background: rgba(0, 212, 255, 0.1);
-  border: 1px solid rgba(0, 212, 255, 0.2);
-  color: var(--accent-secondary);
+  background: var(--toggle-bg);
+  border: 1px solid var(--border-color);
+  color: var(--accent-primary);
 }
 
 .profile-divider {
   height: 1px;
   background: var(--border-color);
-  margin: 20px 0;
+  margin: 22px 0;
 }
 
 .profile-links {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .social-link {
@@ -68,19 +76,21 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 10px;
+  padding: 11px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
   color: var(--text-secondary);
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
 }
 
 .social-link:hover {
   border-color: var(--accent-primary);
   color: var(--accent-primary);
-  background: rgba(108, 99, 255, 0.08);
+  background: var(--toggle-bg);
+  transform: translateY(-2px);
 }
 
 /* Right side */
@@ -91,10 +101,10 @@
 }
 
 .profile-block-title {
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   font-weight: 700;
   color: var(--accent-primary);
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--border-color);
   display: flex;
@@ -104,7 +114,7 @@
 
 .summary-text {
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   line-height: 1.8;
   margin-bottom: 12px;
 }
@@ -117,7 +127,7 @@
 .skill-bars {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
 }
 
 .skill-bar-header {
@@ -127,36 +137,41 @@
 }
 
 .skill-bar-name {
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 0.88rem;
+  font-weight: 600;
   color: var(--text-primary);
 }
 
 .skill-bar-pct {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--accent-secondary);
   font-family: var(--font-mono);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .skill-bar-track {
-  height: 5px;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 3px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
   overflow: hidden;
+}
+
+[data-theme="light"] .skill-bar-track {
+  background: rgba(0, 0, 0, 0.06);
 }
 
 .skill-bar-fill {
   height: 100%;
   background: var(--accent-gradient);
-  border-radius: 3px;
+  border-radius: 4px;
+  transition: width 1s ease-in-out;
 }
 
 /* Tech Grid */
 .tech-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+  gap: 12px;
 }
 
 .tech-badge {
@@ -165,33 +180,33 @@
   gap: 10px;
   padding: 10px 14px;
   border-radius: var(--radius-sm);
-  background: rgba(108, 99, 255, 0.06);
+  background: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  transition: all 0.2s ease;
-  cursor: default;
+  transition: all 0.25s ease;
   cursor: pointer;
 }
 
 .tech-badge:hover {
-  background: rgba(108, 99, 255, 0.15);
+  background: var(--toggle-bg);
   border-color: var(--accent-primary);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
 }
 
 .tech-icon {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
 }
 
 .tech-symbol {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border-radius: 6px;
   background: var(--accent-gradient);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 800;
   color: white;
   flex-shrink: 0;
@@ -199,9 +214,9 @@
 }
 
 .tech-name {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
 @media (max-width: 900px) {
@@ -225,6 +240,6 @@
 
 @media (max-width: 480px) {
   .tech-grid {
-    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
 }

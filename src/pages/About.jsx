@@ -4,8 +4,6 @@ import './About.css'
 import myImg from '../assets/images/jpg/dharmik.jpg'
 import { projects, techItems } from '../common/StaticData'
 
-
-
 function About() {
   const heroRef = useScrollReveal()
   const techHeadRef = useScrollReveal()
@@ -18,27 +16,22 @@ function About() {
       <section className="hero-section">
         <div className="container">
           <div className="hero-content reveal" ref={heroRef}>
-            {/* Profile Image */}
-            <div className="hero-image-wrap">
-              <div className="hero-image-glow" />
-              <img
-                src={myImg}
-                alt="Dharmik Panchani"
-                className="profile-img"
-              />
-            </div>
-
-            {/* Text */}
+            {/* Left Text */}
             <div className="hero-text">
               <p className="hero-greeting">Hello, I'm</p>
-              <h1 className="hero-name gradient-text">Dharmik Panchani</h1>
+              <h1 className="hero-name">
+                <span className="gradient-text">Dharmik Panchani</span>
+              </h1>
               <p className="hero-title">MERN Stack Developer</p>
+              
               <p className="hero-description">
                 I am a passionate MERN Stack Developer with 3+ years of experience building scalable, responsive, and high-performance web applications. I specialize in modern frontend development using React.js, JavaScript, and Redux, along with backend technologies like Node.js and MongoDB.
               </p>
               <p className="hero-description">
                 I enjoy creating intuitive user interfaces, writing clean and maintainable code, and delivering high-quality digital products that provide excellent user experiences.
               </p>
+
+              {/* Action Buttons */}
               <div className="hero-actions">
                 <NavLink to="/contact" className="btn-primary">
                   Get In Touch
@@ -46,6 +39,20 @@ function About() {
                 <NavLink to="/resume" className="btn-secondary">
                   View Resume
                 </NavLink>
+              </div>
+            </div>
+
+            {/* Right Profile Visual Frame */}
+            <div className="hero-visual-col">
+              <div className="hero-card-frame">
+                <div className="hero-ambient-glow" />
+                <div className="hero-image-container">
+                  <img
+                    src={myImg}
+                    alt="Dharmik Panchani"
+                    className="profile-img"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -62,25 +69,38 @@ function About() {
           </div>
         </div>
 
-        {/* Marquee — full width, no container constraint */}
+        {/* Marquee — full width */}
         <div className="marquee-outer">
           <div className="marquee-track">
             {[...techItems, ...techItems].map((tech, i) => (
-              <div key={i} className="tech-slide-card" onClick={() => window.open(tech.doc, "_blank")}>
-                {
-                  tech?.logo ?
-                    <img src={tech.logo} alt={tech.name} className='slide-logo' /> :
-                    <span
-                      className="tech-slide-icon"
-                      style={{
-                        color: tech.color,
-                        backgroundColor: tech.color + '22',
-                        border: `1px solid ${tech.color}40`,
-                      }}
-                    >
-                      {tech.symbol}
-                    </span>
-                }
+              <div 
+                key={i} 
+                className="tech-slide-card" 
+                onClick={() => window.open(tech.doc, "_blank")}
+              >
+                {tech?.logo ? (
+                  <img
+                    src={tech.logo}
+                    alt={tech.name}
+                    className="slide-logo"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none'
+                      const fallback = e.currentTarget.parentElement?.querySelector('.tech-slide-fallback')
+                      if (fallback) fallback.style.display = 'flex'
+                    }}
+                  />
+                ) : null}
+                <span
+                  className="tech-slide-icon tech-slide-fallback"
+                  style={{
+                    color: tech.color,
+                    backgroundColor: tech.color + '22',
+                    border: `1px solid ${tech.color}40`,
+                    display: tech?.logo ? 'none' : 'flex',
+                  }}
+                >
+                  {tech.symbol}
+                </span>
                 <span className="tech-slide-name">{tech.name}</span>
               </div>
             ))}
@@ -100,7 +120,6 @@ function About() {
           <div className="projects-grid reveal" ref={projectsGridRef}>
             {projects.map((project) => (
               <div key={project.name} className="project-card card">
-                {/* Top accent line */}
                 <div className="project-accent-line" />
 
                 <div className="project-header">
@@ -140,7 +159,7 @@ function About() {
                   ))}
                 </ul>
 
-                {projects.features && (
+                {project.features && (
                   <>
                     <p className="project-features-label">Features</p>
                     <ul className="project-features">

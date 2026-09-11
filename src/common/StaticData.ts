@@ -16,8 +16,8 @@ export const techItems = [
     {
         name: "Express.js",
         symbol: "Ex",
-        color: "#ffffff",
-        logo: "https://cdn.simpleicons.org/express/ffffff",
+        color: "#68A063",
+        logo: "https://cdn.simpleicons.org/express",
         doc: "https://expressjs.com/"
     },
     {
@@ -30,8 +30,8 @@ export const techItems = [
     {
         name: "Next.js",
         symbol: "Nx",
-        color: "#ffffff",
-        logo: "https://cdn.simpleicons.org/nextdotjs/ffffff",
+        color: "#000000",
+        logo: "https://cdn.simpleicons.org/nextdotjs",
         doc: "https://nextjs.org/docs"
     },
     {
@@ -115,7 +115,7 @@ export const techItems = [
         name: "CSS3",
         symbol: "Cs",
         color: "#2965f1",
-        logo: "https://cdn.simpleicons.org/css3/2965f1",
+        logo: "https://cdn.simpleicons.org/css/2965f1",
         doc: "https://developer.mozilla.org/en-US/docs/Web/CSS"
     },
     {

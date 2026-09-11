@@ -106,13 +106,24 @@ function Profile() {
               <div className="tech-grid">
                 {techItems.map((tech) => (
                   <div key={tech.name} className="tech-badge" onClick={() => window.open(tech.doc, "_blank")}>
-                    {
-                      tech?.logo ? (
-                        <img src={tech.logo} alt={tech.name} className="tech-icon" />
-                      ) : (
-                        <span className="tech-symbol">{tech.symbol}</span>
-                      )
-                    }
+                    {tech?.logo ? (
+                      <img
+                        src={tech.logo}
+                        alt={tech.name}
+                        className="tech-icon"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none'
+                          const fallback = e.currentTarget.parentElement?.querySelector('.tech-icon-fallback')
+                          if (fallback) fallback.style.display = 'flex'
+                        }}
+                      />
+                    ) : null}
+                    <span
+                      className="tech-symbol tech-icon-fallback"
+                      style={{ display: tech?.logo ? 'none' : 'flex' }}
+                    >
+                      {tech.symbol}
+                    </span>
                     <span className="tech-name">{tech.name}</span>
                   </div>
                 ))}

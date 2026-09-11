@@ -44,7 +44,7 @@
   width: 36px;
   height: 36px;
   border-radius: var(--radius-sm);
-  background: rgba(108, 99, 255, 0.1);
+  background: var(--toggle-bg);
   border: 1px solid var(--border-color);
   display: flex;
   align-items: center;
@@ -132,8 +132,8 @@ button.detail-value.detail-link:hover {
 
 .form-input:focus {
   border-color: var(--accent-primary);
-  background: rgba(108, 99, 255, 0.04);
-  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+  background: var(--input-bg);
+  box-shadow: 0 0 0 2px var(--border-color-hover);
 }
 
 .form-input::placeholder {
@@ -177,19 +177,28 @@ button.detail-value.detail-link:hover {
   padding: 13px 32px;
   border-radius: var(--radius-sm);
   background: var(--accent-gradient);
-  color: white;
-  font-weight: 600;
-  font-size: 0.9rem;
+  color: #030712;
+  font-weight: 700;
+  font-size: 0.92rem;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(108, 99, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);
   align-self: flex-start;
+}
+
+[data-theme="light"] .submit-btn {
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(2, 132, 199, 0.3);
 }
 
 .submit-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(108, 99, 255, 0.5);
+  box-shadow: 0 8px 30px rgba(0, 242, 254, 0.5);
+}
+
+[data-theme="light"] .submit-btn:hover:not(:disabled) {
+  box-shadow: 0 8px 30px rgba(2, 132, 199, 0.45);
 }
 
 .submit-btn:disabled {
