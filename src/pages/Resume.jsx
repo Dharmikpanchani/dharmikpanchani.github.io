@@ -3,8 +3,8 @@ import './Resume.css'
 import resumePDF from '../assets/pdf/dharmik-panchani-resume.pdf'
 
 const skillCategories = {
-  Frontend: ['React.js', 'Next.js', 'TypeScript', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Redux Toolkit', 'Context API'],
-  'Backend & APIs': ['Node.js', 'Express.js', 'MongoDB', 'RESTful APIs', 'JWT Auth', 'Firebase'],
+  Frontend: ['React.js', 'Next.js', 'React Native', 'TypeScript', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Redux Toolkit', 'Context API'],
+  'Backend & APIs': ['Node.js', 'Express.js', 'MongoDB', 'Redis & BullMQ', 'Socket.IO', 'Python (FastAPI)', 'RESTful APIs', 'JWT Auth', 'Firebase'],
   'UI & Styling': ['Material UI (MUI)', 'Tailwind CSS', 'Bootstrap', 'Responsive Web Design'],
   'Tools & Architecture': ['Git & GitHub', 'Vite', 'Postman', 'Keycloak (OAuth2/OIDC)', 'Formik / Yup'],
 }
@@ -114,16 +114,27 @@ const experience = [
   },
 ]
 
-const internshipProject = {
-  name: 'School Management System (Database & Backend Project)',
-  url: 'http://vidyasetudemo.in/',
-  technologies: ['Node.js', 'MongoDB', 'Relational Database Design', 'REST APIs'],
-  description: 'Designed and implemented a structured and normalized database architecture for a School Management System to efficiently handle student enrollment, academic records, faculty allocation, and administrative workflows.',
+const foundedProject = {
+  name: 'VidyaSetu – Multi-Tenant School OS (SaaS ERP)',
+  url: 'https://vidyasetudemo.in/',
+  role: 'Founder & Principal Full-Stack Architect',
+  technologies: [
+    'Node.js',
+    'MongoDB (Multi-Tenant)',
+    'Redis & BullMQ',
+    'React.js & Next.js',
+    'React Native',
+    'TypeScript',
+    'Socket.IO',
+    'Python (FastAPI & InsightFace)',
+  ],
+  description:
+    'Conceived, planned, funded, and architected VidyaSetu — an end-to-end 6-service multi-tenant School OS platform spanning Developer & School Admin Panels, a Teacher/Student/Parent Portal, an Offline-First Mobile App, and Edge CCTV & Face Recognition services.',
   contributions: [
-    'Designed normalized database schemas ensuring high data integrity and minimal redundancy',
-    'Structured relational models for students, instructors, courses, and examination grading',
-    'Implemented table relationships, primary/foreign indexing, and data constraint rules',
-    'Documented comprehensive Entity-Relationship (ER) diagrams and SQL/NoSQL schema specifications',
+    'Architected isolated per-school MongoDB tenant databases, RBAC permissions, Redis caching, BullMQ async workers, and Razorpay subscription & fee billing',
+    'Built full-stack web portals (React 19 + Vite Admin & Next.js 16 subdomain Portal) and an offline-first React Native mobile app with SQLite sync',
+    'Engineered a multi-provider AI Copilot (OpenAI, Gemini, Claude) and Python FastAPI services for RTSP-to-HLS CCTV streaming, anti-spoofing liveness, and face attendance',
+    'Delivered trilingual support (English, Hindi, Gujarati), automated parent notifications (FCM, WhatsApp, SMS, Email), and complete academic/finance ERP modules',
   ],
 }
 
@@ -400,7 +411,7 @@ function Resume() {
               </div>
             </div>
 
-            {/* Internship */}
+            {/* Founded Product */}
             <div className="resume-block card">
               <h2 className="resume-block-title">
                 <span className="block-icon">
@@ -409,14 +420,14 @@ function Resume() {
                     <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
                   </svg>
                 </span>
-                Internship Project
+                Founded Product
               </h2>
               <div className="exp-project-card exp-project-card--standalone">
                 <div className="exp-project-header">
-                  <span className="exp-project-name">{internshipProject.name}</span>
-                  {internshipProject.url && (
+                  <span className="exp-project-name">{foundedProject.name}</span>
+                  {foundedProject.url && (
                     <a
-                      href={internshipProject.url}
+                      href={foundedProject.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="exp-project-link"
@@ -430,20 +441,20 @@ function Resume() {
                     </a>
                   )}
                 </div>
-                {internshipProject.role && (
-                  <span className="project-role-badge">{internshipProject.role}</span>
+                {foundedProject.role && (
+                  <span className="project-role-badge">{foundedProject.role}</span>
                 )}
-                <p className="exp-project-desc" style={{ marginTop: '8px' }}>{internshipProject.description}</p>
-                {internshipProject.technologies && internshipProject.technologies.length > 0 && (
+                <p className="exp-project-desc" style={{ marginTop: '8px' }}>{foundedProject.description}</p>
+                {foundedProject.technologies && foundedProject.technologies.length > 0 && (
                   <div className="exp-project-tech">
-                    {internshipProject.technologies.map((tech) => (
+                    {foundedProject.technologies.map((tech) => (
                       <span key={tech} className="resume-skill-tag resume-skill-tag--tech">{tech}</span>
                     ))}
                   </div>
                 )}
                 <p className="timeline-sub-label" style={{ marginTop: '10px' }}>Key Contributions</p>
                 <ul className="timeline-points">
-                  {internshipProject.contributions.map((c, i) => (
+                  {foundedProject.contributions.map((c, i) => (
                     <li key={i}>{c}</li>
                   ))}
                 </ul>

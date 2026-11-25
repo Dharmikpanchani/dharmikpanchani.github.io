@@ -124,10 +124,67 @@ export const techItems = [
         color: "#F05032",
         logo: "https://cdn.simpleicons.org/git/F05032",
         doc: "https://git-scm.com/doc"
+    },
+    {
+        name: "React Native",
+        symbol: "RN",
+        color: "#61DAFB",
+        logo: "https://cdn.simpleicons.org/react/61DAFB",
+        doc: "https://reactnative.dev/docs/getting-started"
+    },
+    {
+        name: "Redis",
+        symbol: "Rd",
+        color: "#FF4438",
+        logo: "https://cdn.simpleicons.org/redis/FF4438",
+        doc: "https://redis.io/docs/"
+    },
+    {
+        name: "Socket.IO",
+        symbol: "SO",
+        color: "#010101",
+        logo: "https://cdn.simpleicons.org/socketdotio",
+        doc: "https://socket.io/docs/v4/"
+    },
+    {
+        name: "FastAPI",
+        symbol: "FA",
+        color: "#009688",
+        logo: "https://cdn.simpleicons.org/fastapi/009688",
+        doc: "https://fastapi.tiangolo.com/"
     }
 ];
 
 export const projects = [
+    {
+        name: 'VidyaSetu – Multi-Tenant School OS (SaaS ERP)',
+        url: 'https://vidyasetudemo.in/',
+        role: 'Founder & Principal Full-Stack Architect',
+        technologies: [
+            'Next.js',
+            'React.js',
+            'React Native',
+            'Node.js',
+            'Express.js',
+            'MongoDB',
+            'Redis & BullMQ',
+            'Socket.IO',
+            'Python (FastAPI)',
+            'TypeScript'
+        ],
+        points: [
+            'Conceived, planned, funded, and architected a 6-app multi-tenant School OS ecosystem covering Developer & School Admin Panels (React/Vite), Teacher/Student/Parent Portal (Next.js 16), Offline-First Mobile App (React Native), and Python Edge CCTV/Face services.',
+            'Engineered isolated per-school MongoDB tenant databases, Redis caching, BullMQ background workers/crons, Socket.IO real-time updates, and Razorpay subscription & fee billing.',
+            'Built a multi-provider AI Copilot (OpenAI, Gemini, Claude) alongside Python FastAPI + InsightFace biometric liveness/attendance and FFmpeg RTSP-to-HLS live CCTV streaming.',
+            'Implemented trilingual localization (English, Hindi, Gujarati), granular RBAC permissions, and enterprise security (JWT rotation, Helmet, Turnstile, audit logs).'
+        ],
+        features: [
+            'Multi-tenant subdomain portals for School Admins, Teachers, Students, and Parents with dual-role switching.',
+            '365-day academic & operations suite: Admissions, Fees/Challan/Tally export, Exams, Report Cards, Timetable, HR/Payroll, Library, Hostel, Inventory & Transport tracking.',
+            'AI-powered CCTV face attendance & QR/Face Kiosk workflows with automated parent alerts (FCM, WhatsApp, SMS, Email).',
+            'Offline-first React Native mobile app with SQLite sync engine and dynamic school theme branding.'
+        ],
+    },
     {
         name: 'News Capital (Digital OTT & News Platform)',
         url: 'https://newscapital.com/',
@@ -198,17 +255,6 @@ export const projects = [
             'Created RESTful backend APIs in Express.js with MongoDB & Mongoose for CRUD operations, inventory management, and user profiles.',
             'Managed global shopping cart, user auth state, and product filters using Redux Toolkit.',
             'Implemented form validations, error boundaries, and responsive mobile-first UI design.'
-        ],
-    },
-    {
-        name: 'School Management & Administration System',
-        url: 'http://vidyasetudemo.in/',
-        role: 'Database & Backend Developer',
-        technologies: ['Node.js', 'MongoDB', 'Express.js', 'Relational Database Design', 'REST APIs'],
-        points: [
-            'Designed and implemented normalized database architecture for managing school operations, students, teachers, and attendance.',
-            'Built structured RESTful API endpoints for student enrollment, grade management, and fee tracking.',
-            'Enforced strict data integrity constraints, indexing, and role-based permissions for administrative records.'
         ],
     },
 ];
